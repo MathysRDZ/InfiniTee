@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Votre compte a été créé">
+    <meta name="description" content="">
+    <title>Synthèse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <script class="u-script" type="text/javascript" src="{% static 'js/synthese_js.js'%}" defer=""></script>
+ 
+
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Ma Renta">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+
+
+  {% endblock %}
+   
+  {% block script %}
+
+
+   
+ 
+
+{% endblock %}
+
+{% block content %}
+ 
+
+ 
+<section >
+ <!-- The video -->
+<video autoplay muted loop id="myVideo">
+    <source src="{% static '/images/background-video.mp4' %}" type="video/mp4">
+  </video>
+  
+  <!-- Optional: some overlay text to describe the video -->
+  <div class="content">
+    <h1>Heading</h1>
+    <p>Lorem ipsum...</p>
+    <!-- Use a button to pause/play the video with JavaScript -->
+    <button id="myBtn" onclick="myFunction()">Pause</button>
+  </div>
+ 
+    <style>
+ /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 200px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+        </style>
+<script>
+    // Get the video
+    var video = document.getElementById("myVideo");
+    
+    // Get the button
+    var btn = document.getElementById("myBtn");
+    
+    // Pause and play the video, and change the button text
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+    </script>
+                
+
+</body></html>
+
+{% endblock %}
